@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class User extends Account implements Serializable {
     private static final long serialVersionUID = 1L;
 
+<<<<<<< HEAD
     /** ID */
     private Integer id;
     /** 用户名 */
@@ -36,6 +37,18 @@ public class User extends Account implements Serializable {
         this.role = role;
     }
 
+=======
+
+    private Integer id;
+    private String username;
+    private String password;
+    private String name;
+    private String phone;
+    private String email;
+    private String avatar;
+    private String role;
+
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     @Override
     public Integer getId() {
         return id;

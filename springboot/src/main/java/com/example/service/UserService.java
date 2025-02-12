@@ -32,7 +32,11 @@ public class UserService {
             throw new CustomException(ResultCodeEnum.USER_EXIST_ERROR);
         }
         if (ObjectUtil.isEmpty(user.getPassword())) {
+<<<<<<< HEAD
             user.setPassword("123456");
+=======
+            user.setPassword("111");
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
         }
         if (ObjectUtil.isEmpty(user.getRole())) {
             user.setRole(RoleEnum.USER.name());

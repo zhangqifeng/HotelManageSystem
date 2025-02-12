@@ -38,13 +38,21 @@
           <el-button type="primary" @click="update">保 存</el-button>
         </div>
       </el-form>
+<<<<<<< HEAD
+=======
+
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     </el-card>
   </div>
 </template>
 
 <script>
 export default {
+<<<<<<< HEAD
   name: "AdminPerson",
+=======
+  name: "HotelPerson",
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
   data() {
     return {
       user: JSON.parse(localStorage.getItem('xm-user') || '{}')

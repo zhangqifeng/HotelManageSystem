@@ -1,6 +1,9 @@
 <template>
   <div class="manager-container">
+<<<<<<< HEAD
     <!--  头部  -->
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     <div class="manager-header">
       <div class="manager-header-left">
         <img src="@/assets/imgs/logo.png" />
@@ -18,7 +21,11 @@
         <el-dropdown placement="bottom">
           <div class="avatar">
             <img :src="user.avatar || 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'" />
+<<<<<<< HEAD
             <div>{{ user.name ||  '' }}</div>
+=======
+            <div>{{ user.name ||  '管理员' }}</div>
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
           </div>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item @click.native="goToPerson">个人信息</el-dropdown-item>
@@ -42,12 +49,20 @@
             <template slot="title">
               <i class="el-icon-menu"></i><span>信息管理</span>
             </template>
+<<<<<<< HEAD
             <el-menu-item index="/notice" v-if="user.role === 'ADMIN'">公告信息</el-menu-item>
             <el-menu-item index="/orders">订单信息</el-menu-item>
             <el-menu-item index="/checkin">入住登记</el-menu-item>
           </el-submenu>
 
           <el-submenu index="user" v-if="user.role === 'ADMIN'">
+=======
+            <el-menu-item index="/notice">公告信息</el-menu-item>
+            <el-menu-item index="/type">房间分类</el-menu-item>
+          </el-submenu>
+
+          <el-submenu index="user">
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
             <template slot="title">
               <i class="el-icon-menu"></i><span>用户管理</span>
             </template>

@@ -6,7 +6,10 @@ import com.example.common.Result;
 import com.example.common.enums.ResultCodeEnum;
 import com.example.common.enums.RoleEnum;
 import com.example.entity.Account;
+<<<<<<< HEAD
 import com.example.entity.User;
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
 import com.example.service.AdminService;
 import com.example.service.HotelService;
 import com.example.service.UserService;
@@ -14,9 +17,13 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
+<<<<<<< HEAD
 /**
  * 基础前端接口
  */
+=======
+
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
 @RestController
 public class WebController {
 
@@ -32,9 +39,13 @@ public class WebController {
         return Result.success("访问成功");
     }
 
+<<<<<<< HEAD
     /**
      * 登录
      */
+=======
+
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     @PostMapping("/login")
     public Result login(@RequestBody Account account) {
         if (ObjectUtil.isEmpty(account.getUsername()) || ObjectUtil.isEmpty(account.getPassword())
@@ -53,9 +64,13 @@ public class WebController {
         return Result.success(account);
     }
 
+<<<<<<< HEAD
     /**
      * 注册
      */
+=======
+
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     @PostMapping("/register")
     public Result register(@RequestBody Account account) {
         if (StrUtil.isBlank(account.getUsername()) || StrUtil.isBlank(account.getPassword())
@@ -74,9 +89,12 @@ public class WebController {
         return Result.success();
     }
 
+<<<<<<< HEAD
     /**
      * 修改密码
      */
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     @PutMapping("/updatePassword")
     public Result updatePassword(@RequestBody Account account) {
         if (StrUtil.isBlank(account.getUsername()) || StrUtil.isBlank(account.getPassword())

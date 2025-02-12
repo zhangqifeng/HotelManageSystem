@@ -40,6 +40,7 @@
         </el-table-column>
       </el-table>
 
+<<<<<<< HEAD
       <div class="pagination">
         <el-pagination
             background
@@ -86,17 +87,62 @@
     </el-dialog>
 
 <!--@click="navToDetail(item)"-->
+=======
+
+      <el-dialog title="酒店" :visible.sync="fromVisible" width="40%" :close-on-click-modal="false" destroy-on-close>
+        <el-form :model="form" label-width="100px" style="padding-right: 50px" :rules="rules" ref="formRef">
+          <el-form-item label="用户名" prop="username">
+            <el-input v-model="form.username" placeholder="酒店账号"></el-input>
+          </el-form-item>
+          <el-form-item label="酒店名称" prop="name">
+            <el-input v-model="form.name" placeholder="酒店名称"></el-input>
+          </el-form-item>
+          <el-form-item label="价格" prop="name">
+            <el-input v-model="form.price" placeholder="价格"></el-input>
+          </el-form-item>
+          <el-form-item label="电话" prop="phone">
+            <el-input v-model="form.phone" placeholder="电话"></el-input>
+          </el-form-item>
+          <el-form-item label="邮箱" prop="birth">
+            <el-input v-model="form.email" placeholder="邮箱"></el-input>
+          </el-form-item>
+          <el-form-item label="官网" prop="url">
+            <el-input v-model="form.url" placeholder="官网"></el-input>
+          </el-form-item>
+          <el-form-item label="介绍" prop="url">
+            <el-input type="textarea" v-model="form.description" placeholder="介绍"></el-input>
+          </el-form-item>
+        </el-form>
+
+        <div slot="footer" class="dialog-footer">
+          <el-button @click="fromVisible = false">取 消</el-button>
+          <el-button type="primary" @click="save">确 定</el-button>
+        </div>
+      </el-dialog>
+    </div>
+
+
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
   </div>
 </template>
 
 <script>
 export default {
+<<<<<<< HEAD
   name: "Admin",
   data() {
     return {
       tableData: [],  // 所有的数据
       pageNum: 1,   // 当前的页码
       pageSize: 10,  // 每页显示的个数
+=======
+  name: "Hotel",
+  data() {
+    return {
+      tableData: [],
+      pageNum: 1,
+      pageSize: 10,
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
       total: 0,
       username: null,
       fromVisible: false,
@@ -114,6 +160,7 @@ export default {
     this.load(1)
   },
   methods: {
+<<<<<<< HEAD
     handleAdd() {   // 新增数据
       this.form = {}  // 新增数据的时候清空数据
       this.fromVisible = true   // 打开弹窗
@@ -123,6 +170,17 @@ export default {
       this.fromVisible = true   // 打开弹窗
     },
     save() {   // 保存按钮触发的逻辑  它会触发新增或者更新
+=======
+    handleAdd() {
+      this.form = {}  // 新增数据的时候清空数据
+      this.fromVisible = true   // 打开弹窗
+    },
+    handleEdit(row) {
+      this.form = JSON.parse(JSON.stringify(row))
+      this.fromVisible = true
+    },
+    save() {
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
       this.$refs.formRef.validate((valid) => {
         if (valid) {
           this.$request({
@@ -130,17 +188,26 @@ export default {
             method: this.form.id ? 'PUT' : 'POST',
             data: this.form
           }).then(res => {
+<<<<<<< HEAD
             if (res.code === '200') {  // 表示成功保存
+=======
+            if (res.code === '200') {
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
               this.$message.success('保存成功')
               this.load(1)
               this.fromVisible = false
             } else {
+<<<<<<< HEAD
               this.$message.error(res.msg)  // 弹出错误的信息
+=======
+              this.$message.error(res.msg)
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
             }
           })
         }
       })
     },
+<<<<<<< HEAD
     del(id) {   // 单个删除
       this.$confirm('您确定删除吗？', '确认删除', {type: "warning"}).then(response => {
         this.$request.delete('/hotel/delete/' + id).then(res => {
@@ -149,32 +216,61 @@ export default {
             this.load(1)
           } else {
             this.$message.error(res.msg)  // 弹出错误的信息
+=======
+    del(id) {
+      this.$confirm('您确定删除吗？', '确认删除', {type: "warning"}).then(response => {
+        this.$request.delete('/hotel/delete/' + id).then(res => {
+          if (res.code === '200') {
+            this.$message.success('操作成功')
+            this.load(1)
+          } else {
+            this.$message.error(res.msg)
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
           }
         })
       }).catch(() => {
       })
     },
+<<<<<<< HEAD
     handleSelectionChange(rows) {   // 当前选中的所有的行数据
       this.ids = rows.map(v => v.id)
     },
     delBatch() {   // 批量删除
+=======
+    handleSelectionChange(rows) {
+      this.ids = rows.map(v => v.id)
+    },
+    delBatch() {
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
       if (!this.ids.length) {
         this.$message.warning('请选择数据')
         return
       }
       this.$confirm('您确定批量删除这些数据吗？', '确认删除', {type: "warning"}).then(response => {
         this.$request.delete('/hotel/delete/batch', {data: this.ids}).then(res => {
+<<<<<<< HEAD
           if (res.code === '200') {   // 表示操作成功
             this.$message.success('操作成功')
             this.load(1)
           } else {
             this.$message.error(res.msg)  // 弹出错误的信息
+=======
+          if (res.code === '200') {
+            this.$message.success('操作成功')
+            this.load(1)
+          } else {
+            this.$message.error(res.msg)
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
           }
         })
       }).catch(() => {
       })
     },
+<<<<<<< HEAD
     load(pageNum) {  // 分页查询
+=======
+    load(pageNum) {
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
       if (pageNum) this.pageNum = pageNum
       this.$request.get('/hotel/selectPage', {
         params: {
@@ -183,12 +279,17 @@ export default {
           username: this.username,
         }
       }).then(res => {
+<<<<<<< HEAD
         if (res.code === '200') {   // 表示操作成功
           this.tableData = res.data?.list
           this.total = res.data?.total
         } else {
           this.$message.error(res.msg)  // 弹出错误的信息
         }
+=======
+        this.tableData = res.data?.list
+        this.total = res.data?.total
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
       })
     },
     reset() {
@@ -202,6 +303,7 @@ export default {
       // 把头像属性换成上传的图片的链接
       this.form.avatar = response.data
     },
+<<<<<<< HEAD
     // navToDetail(item) {
     //   if (item.num ===0){
     //     this.$message.warning('该类房型目前没有空余房间了，请选择其他客房')
@@ -209,6 +311,8 @@ export default {
     //   }
     //   location.href = '/front/detail?id=' + item.id
     // },
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
   }
 }
 </script>

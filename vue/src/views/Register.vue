@@ -19,7 +19,11 @@
           </el-select>
         </el-form-item>
         <el-form-item>
+<<<<<<< HEAD
           <el-button style="width: 100%;color: white" type="primary" @click="register">注 册</el-button>
+=======
+          <el-button style="width: 100%; background-color: #333; border-color: #333; color: white" @click="register">注 册</el-button>
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
         </el-form-item>
         <div style="display: flex; align-items: center">
           <div style="flex: 1"></div>

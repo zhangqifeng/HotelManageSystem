@@ -14,7 +14,10 @@ public enum ResultCodeEnum {
     USER_ACCOUNT_ERROR("5003", "账号或密码错误"),
     USER_NOT_EXIST_ERROR("5004", "用户不存在"),
     PARAM_PASSWORD_ERROR("5005", "原密码输入错误"),
+<<<<<<< HEAD
     TIME_CHECK_ERROR("5007","您选择的时间不合理"),
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     ;
 
     public String code;

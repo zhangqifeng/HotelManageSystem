@@ -1,13 +1,21 @@
 package com.example.service;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
 import cn.hutool.core.util.ObjectUtil;
 import com.example.common.enums.ResultCodeEnum;
 import com.example.common.enums.RoleEnum;
 import com.example.common.enums.StatusEnum;
 import com.example.entity.Account;
+<<<<<<< HEAD
 import com.example.entity.Admin;
 import com.example.entity.Hotel;
 import com.example.entity.User;
+=======
+import com.example.entity.Hotel;
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
 import com.example.exception.CustomException;
 import com.example.mapper.HotelMapper;
 import com.example.utils.TokenUtils;
@@ -19,9 +27,12 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
+<<<<<<< HEAD
 /**
  * 酒店业务处理
  **/
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
 @Service
 public class HotelService {
 
@@ -35,13 +46,21 @@ public class HotelService {
             throw new CustomException(ResultCodeEnum.USER_EXIST_ERROR);
         }
         if (ObjectUtil.isEmpty(hotel.getPassword())) {
+<<<<<<< HEAD
             hotel.setPassword("123456");
+=======
+            hotel.setPassword("111");
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
         }
         if (ObjectUtil.isEmpty(hotel.getRole())) {
             hotel.setRole(RoleEnum.HOTEL.name());
         }
         if (ObjectUtil.isEmpty(hotel.getAvatar())) {
+<<<<<<< HEAD
             hotel.setAvatar("http://localhost:9090/files/1697438073596-avatar.png");
+=======
+            hotel.setAvatar("http://localhost:9091/files/1697438073596-avatar.png");
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
         }
         hotel.setStatus(StatusEnum.CHECKING.status);
         hotelMapper.insert(hotel);
@@ -82,16 +101,26 @@ public class HotelService {
         return hotel;
     }
 
+<<<<<<< HEAD
+=======
+    public Hotel selectById(Integer id) {
+        return hotelMapper.selectById(id);
+    }
+
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     public void register(Account account) {
         Hotel hotel = new Hotel();
         BeanUtils.copyProperties(account, hotel);
         add(hotel);
     }
 
+<<<<<<< HEAD
     public Hotel selectById(Integer id) {
         return hotelMapper.selectById(id);
     }
 
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     public void updatePassword(Account account) {
         Hotel dbHotel = hotelMapper.selectByUsername(account.getUsername());
         if (ObjectUtil.isNull(dbHotel)) {
@@ -103,4 +132,11 @@ public class HotelService {
         dbHotel.setPassword(account.getNewPassword());
         hotelMapper.updateById(dbHotel);
     }
+<<<<<<< HEAD
+=======
+
+    public List<Hotel> selectAll() {
+        return hotelMapper.selectAll(new Hotel());
+    }
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
 }

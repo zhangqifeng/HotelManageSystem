@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class Admin extends Account implements Serializable {
     private static final long serialVersionUID = 1L;
 
+<<<<<<< HEAD
     /** ID */
     private Integer id;
     /** 用户名 */
@@ -23,6 +24,16 @@ public class Admin extends Account implements Serializable {
     /** 头像 */
     private String avatar;
     /** 角色标识 */
+=======
+    private Integer id;
+    private String username;
+    private String password;
+    private String name;
+    private String phone;
+    private String email;
+    private String avatar;
+
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     private String role;
 
     @Override

@@ -17,18 +17,25 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
+<<<<<<< HEAD
 /**
  * 管理员业务处理
  **/
+=======
+
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
 @Service
 public class AdminService {
 
     @Resource
     private AdminMapper adminMapper;
 
+<<<<<<< HEAD
     /**
      * 新增
      */
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     public void add(Admin admin) {
         Admin dbAdmin = adminMapper.selectByUsername(admin.getUsername());
         if (ObjectUtil.isNotNull(dbAdmin)) {
@@ -44,55 +51,76 @@ public class AdminService {
         adminMapper.insert(admin);
     }
 
+<<<<<<< HEAD
     /**
      * 删除
      */
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     public void deleteById(Integer id) {
         adminMapper.deleteById(id);
     }
 
+<<<<<<< HEAD
     /**
      * 批量删除
      */
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     public void deleteBatch(List<Integer> ids) {
         for (Integer id : ids) {
             adminMapper.deleteById(id);
         }
     }
 
+<<<<<<< HEAD
     /**
      * 修改
      */
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     public void updateById(Admin admin) {
         adminMapper.updateById(admin);
     }
 
+<<<<<<< HEAD
     /**
      * 根据ID查询
      */
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     public Admin selectById(Integer id) {
         return adminMapper.selectById(id);
     }
 
+<<<<<<< HEAD
     /**
      * 查询所有
      */
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     public List<Admin> selectAll(Admin admin) {
         return adminMapper.selectAll(admin);
     }
 
+<<<<<<< HEAD
     /**
      * 分页查询
      */
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     public PageInfo<Admin> selectPage(Admin admin, Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<Admin> list = adminMapper.selectAll(admin);
         return PageInfo.of(list);
     }
 
+<<<<<<< HEAD
     /**
      * 登录
      */
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     public Account login(Account account) {
         Account dbAdmin = adminMapper.selectByUsername(account.getUsername());
         if (ObjectUtil.isNull(dbAdmin)) {
@@ -108,18 +136,24 @@ public class AdminService {
         return dbAdmin;
     }
 
+<<<<<<< HEAD
     /**
      * 注册
      */
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     public void register(Account account) {
         Admin admin = new Admin();
         BeanUtils.copyProperties(account, admin);
         add(admin);
     }
 
+<<<<<<< HEAD
     /**
      * 修改密码
      */
+=======
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     public void updatePassword(Account account) {
         Admin dbAdmin = adminMapper.selectByUsername(account.getUsername());
         if (ObjectUtil.isNull(dbAdmin)) {

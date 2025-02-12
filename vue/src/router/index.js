@@ -20,6 +20,7 @@ const routes = [
       { path: 'home', name: 'Home', meta: { name: '系统首页' }, component: () => import('../views/manager/Home') },
       { path: 'admin', name: 'Admin', meta: { name: '管理员信息' }, component: () => import('../views/manager/Admin') },
       { path: 'adminPerson', name: 'AdminPerson', meta: { name: '个人信息' }, component: () => import('../views/manager/AdminPerson') },
+<<<<<<< HEAD
       { path: 'hotelPerson', name: 'HotelPerson', meta: { name: '个人信息' }, component: () => import('../views/manager/HotelPerson') },
       { path: 'password', name: 'Password', meta: { name: '修改密码' }, component: () => import('../views/manager/Password') },
       { path: 'notice', name: 'Notice', meta: { name: '公告信息' }, component: () => import('../views/manager/Notice') },
@@ -27,6 +28,14 @@ const routes = [
       { path: 'user', name: 'User', meta: { name: '用户信息' }, component: () => import('../views/manager/User') },
       { path: 'orders', name: 'Orders', meta: { name: '订单信息' }, component: () => import('../views/manager/Orders') },
       { path: 'checkin', name: 'Checkin', meta: { name: '入住登记' }, component: () => import('../views/manager/Checkin') },
+=======
+      { path: 'password', name: 'Password', meta: { name: '修改密码' }, component: () => import('../views/manager/Password') },
+      { path: 'notice', name: 'Notice', meta: { name: '公告信息' }, component: () => import('../views/manager/Notice') },
+      { path: 'hotel', name: 'Hotel', meta: { name: '酒店信息' }, component: () => import('../views/manager/Hotel') },
+      { path: 'hotelPerson', name: 'HotelPerson', meta: { name: '个人信息' }, component: () => import('../views/manager/HotelPerson') },
+      { path: 'user', name: 'User', meta: { name: '用户信息' }, component: () => import('../views/manager/User') },
+      { path: 'type', name: 'Type', meta: { name: '分类信息' }, component: () => import('../views/manager/Type') },
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     ]
   },
   {
@@ -36,7 +45,11 @@ const routes = [
     children: [
       { path: 'home', name: 'Home', meta: { name: '系统首页' }, component: () => import('../views/front/Home') },
       { path: 'person', name: 'Person', meta: { name: '个人信息' }, component: () => import('../views/front/Person') },
+<<<<<<< HEAD
       { path: 'orders', name: 'Orders', meta: { name: '订单信息' }, component: () => import('../views/front/Orders') },
+=======
+      { path: 'hotel', name: 'Hotel', meta: { name: '酒店信息' }, component: () => import('../views/front/Hotel') },
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     ]
   },
   { path: '/login', name: 'Login', meta: { name: '登录' }, component: () => import('../views/Login.vue') },

@@ -33,6 +33,10 @@ public class TokenUtils {
     private static HotelService staticHotelService;
     private static UserService staticUserService;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     @Resource
     AdminService adminService;
     @Resource
@@ -40,6 +44,10 @@ public class TokenUtils {
     @Resource
     UserService userService;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f4e2c91d433cc0c81d7089310b8122f5fcda505f
     @PostConstruct
     public void setUserService() {
         staticAdminService = adminService;
